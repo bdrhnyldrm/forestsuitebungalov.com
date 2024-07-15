@@ -1,0 +1,80 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f8e9;
+    color: #1b5e20;
+}
+
+header {
+    background-color: #1b5e20;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1b5e20;
+}
+
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    padding: 20px;
+}
+
+.contact-info {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-info li {
+    margin: 20px 0;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.map-iframe {
+    width: 80%; /* Daha geniş yapmak için genişliği arttırdık */
+    height: 500px; /* Daha uzun yapmak için yüksekliği arttırdık */
+    border: 0;
+}

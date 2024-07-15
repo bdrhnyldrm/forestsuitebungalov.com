@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - Bungalov Evler</title>
+    <link rel="stylesheet" href="hakkimizda.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        
+
+        /* Slider CSS */
+        .slider { position: relative; width: 100%; max-width: 400px; height: 600px; overflow: hidden; }
+        .slides { display: flex; transition: transform 0.5s ease-in-out; height: 100%; }
+        .slides img { width: 100%; height: 100%; object-fit: cover; }
+        .navigation { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); }
+        .navigation a { background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; text-decoration: none; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FOREST SUITE BUNGALOV</h1>
+</header>
+
+<nav>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="iletisim.html">İletişim</a>
+</nav>
+
+<div class="container">
+    <div class="slider">
+        <div class="slides">
+            <img src="image/image_2.webp" alt="Bungalov 1">
+            <img src="image/image_3.webp" alt="Bungalov 2">
+            <img src="image/image_6.webp" alt="Bungalov 3">
+            <img src="image/image_7.webp" alt="Bungalov 1">
+            <img src="image/image_12.webp" alt="Bungalov 2">
+            <img src="image/image_20.webp" alt="Bungalov 3">
+        </div>
+        <div class="navigation">
+            <a href="#" class="prev">❮</a>
+            <a href="#" class="next">❯</a>
+        </div>
+    </div>
+    <div class="text-content">
+        <h1>Bungalov Evlerin Keyfini Çıkarın</h1>
+        <p>Doğayla iç içe, huzur dolu ve konforlu bir tatil mi hayal ediyorsunuz? Forest Suite Bungalov evlerimiz, tam da bu hayalinizi gerçekleştirmek için burada. Modern mimarisi ve doğal çevresi ile misafirlerine eşsiz bir tatil deneyimi sunan bungalov evlerimiz, her detayıyla konforunuzu ve rahatlığınızı ön planda tutuyor.</p>
+        <p>Bungalov evlerimizin sunduğu imkanlar sayesinde doğanın kucağında dinlenirken, aynı zamanda lüks ve modern yaşamın tadını çıkarabilirsiniz. Geniş verandalarımızda doğanın huzurunu hissedebilir, her sabah kuş sesleri eşliğinde uyanabilirsiniz. İç mekanlarda ise her türlü konfor düşünülmüş olup, kaliteli mobilyalar ve modern tasarımlar ile ev rahatlığında bir konaklama sizleri bekliyor. Her bungalovda geniş oturma alanları, rahat yataklar ve tam donanımlı mutfaklar bulunmaktadır. Ayrıca, özel banyolarımızda sıcak su ve hijyen standartlarına uygun düzenlemelerle rahatınız sağlanmaktadır.</p>
+        <p>Misyonumuz, misafirlerimize unutulmaz bir tatil deneyimi sunarak, doğanın içinde dinlenmelerini sağlamak. Vizyonumuz ise sürdürülebilir turizm anlayışımızla, çevre dostu ve doğa ile uyumlu konaklama imkanları sunmak. Bu hedeflerimiz doğrultusunda, bungalov evlerimizde konforu ve doğallığı bir araya getiriyor, misafirlerimize eşsiz anılar biriktirme fırsatı sunuyoruz. Ayrıca, enerji tasarruflu sistemler ve çevre dostu malzemeler kullanarak, çevresel ayak izimizi en aza indirmeye özen gösteriyoruz.</p>
+        <p>Forest Suite Bungalov evlerinde konakladığınızda, sadece doğanın güzellikleriyle iç içe olmakla kalmaz, aynı zamanda çevreye duyarlı bir tatil deneyimi de yaşamış olursunuz. Her bungalov, doğanın dengesini bozmadan, çevreyle uyumlu bir şekilde inşa edilmiştir. Yerel bitki örtüsü korunarak, doğal yaşam alanlarına saygı gösterilmiştir. Böylece, doğanın sunduğu güzellikleri bozmadan, misafirlerimizin keyifle vakit geçirebileceği bir ortam yaratılmıştır.</p>
+        <p>Siz de şehir hayatının stresinden uzaklaşmak, doğanın tadını çıkarmak ve sevdiklerinizle unutulmaz anılar biriktirmek istiyorsanız, Forest Suite Bungalov evlerimize davetlisiniz. Huzurlu, konforlu ve unutulmaz bir tatil için bizi tercih edin. Burada, doğanın sunduğu eşsiz güzelliklerin tadını çıkaracak, kendinizi yenilenmiş ve dinlenmiş hissedeceksiniz.</p>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const totalImages = images.length;
+    const intervalTime = 5000; // 10 seconds
+
+    function showNextSlide() {
+        currentIndex++;
+        if (currentIndex >= totalImages) {
+            currentIndex = 0;
+        }
+        updateSlidePosition();
+    }
+
+    function updateSlidePosition() {
+        const offset = -currentIndex * 100;
+        slides.style.transform = `translateX(${offset}%)`;
+    }
+
+    setInterval(showNextSlide, intervalTime);
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = totalImages - 1;
+        }
+        updateSlidePosition();
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex++;
+        if (currentIndex >= totalImages) {
+            currentIndex = 0;
+        }
+        updateSlidePosition();
+    });
+</script>
+
+</body>
+</html>

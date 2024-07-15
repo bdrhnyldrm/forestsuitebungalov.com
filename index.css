@@ -1,0 +1,59 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f8e9;
+    color: #000000;
+}
+
+header {
+    background-color: #1b5e20;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1b5e20;
+}
+
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Resimler arasındaki boşluk */
+}
+
+.hero img {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 800px;
+}
